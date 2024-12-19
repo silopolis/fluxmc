@@ -138,13 +138,13 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ## Flux
 
-Install Flux CLI
+### Install Flux CLI
 
 ```
 brew install fluxcd/tap/flux
 ```
 
-Configurer l'authentification GitHub:
+### Configurer l'authentification GitHub:
 
 ```
 cat < EOS >> .env
@@ -165,7 +165,7 @@ flux check --pre
 ✔ prerequisites checks passed
 ```
 
-Deploy Flux into the cluster:
+### Deploy Flux into the cluster:
 
 ```
 flux bootstrap github \
@@ -220,14 +220,14 @@ The bootstrap command above does the following:
 * *Deploys Flux Components* to your Kubernetes Cluster.
 * *Configures Flux components* to track the path /clusters/my-cluster/ in the repository.
 
-Clone Git repo:
+### Clone Git repo
 
 ```
 git clone https://github.com/$GITHUB_USER/fleet-infra ../fleet-infra
 cd ../fleet-infra
 ```
 
-Add podinfo repository to Flux
+### Add podinfo repository to Flux
 
 ```
 flux create source git podinfo \
@@ -245,7 +245,7 @@ git commit -m "Add podinfo Flux GitRepository"
 git push
 ```
 
-Deploy podinfo application
+### Deploy podinfo application
 
 Configure Flux to build and apply the kustomize directory located in the podinfo repository.
 
