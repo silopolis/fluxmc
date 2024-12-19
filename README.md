@@ -357,7 +357,7 @@ EOP
 Create Capacitor Kustomization 
 
 ```
-# ./clusters/my-cluster/capacitor-kustomization.yaml
+cat << EOF >> ./clusters/my-cluster/capacitor-kustomization.yaml
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: OCIRepository
@@ -386,6 +386,7 @@ spec:
   sourceRef:
     kind: OCIRepository
     name: capacitor
+EOF
 ```
 
 Commit and push Capacitor Kustomization
