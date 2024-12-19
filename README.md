@@ -337,7 +337,7 @@ Customize podinfo deployment
 To customize a deployment from a *repository you don’t control*, you can use Flux **in-line patches**.
 
 ```
-cat < EOP >> podinfo-kustomization.yaml
+cat << EOP >> podinfo-kustomization.yaml
   patches:
     - patch: |-
         apiVersion: autoscaling/v2
